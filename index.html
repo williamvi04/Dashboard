@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="William Villalta">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/libraries/dc.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/style.css" type="text/css" />
+    <script src="static/js/libraries/d3.min.js"></script>
+    <script src="static/js/libraries/crossfilter.min.js"></script>
+    <script src="static/js/libraries/dc.min.js"></script>
+    <script src="static/js/libraries/queue.min.js"></script>
+    <script src="static/js/graph.js"></script>
+    <title> dashboard </title>
+
+</head>
+
+<body class="background">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="col-xs-2">
+                        <a class="navbar-brand"><img alt="Pokemon image" src="static/images/pokeball.png" height="50" width="50"></a>
+                    </div>
+                    <div class="col-xs-10 col-sm-8 main-header">
+                        <a><img class="navbar-header" src="https://fontmeme.com/permalink/220929/f89a10c42c46320e19aaf949b859f2ca.png" alt="Pokemon dashboard logo" height="50" width="100%"></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+   
+    <section class="container">
+
+        <div class="button-wrapper">
+            <div class="reset-button hvr-grow">
+                <a href="javascript:dc.filterAll(); dc.renderAll();">Busqueda Nueva</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row height-alignment">
+                    <div class="col-xs-12 col-sm-6 height-alignment">
+                        <div id="select-pokemon" class="content-style">
+                            <h4>Elige tu pokemon</h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 height-alignment">
+                        <div id="pokemon-volume" class="content-style">
+                            <h4>Pokemon Registrados.</h4>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="statsRow">
+            <div class="col-xs-12">
+                <div class="row height-alignment">
+                    <div class="col-xs-6 col-sm-2 height-alignment">
+                        <div id="hitpoints" class="content-style">
+                            <h4> PS</h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-2 height-alignment">
+                        <div id="speed" class="content-style">
+                            <h4>Velocidad </h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-2 height-alignment">
+                        <div id="attack" class="content-style">
+                            <h4> Ataque </h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-2 height-alignment">
+                        <div id="defence" class="content-style">
+                            <h4>Defensa </h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-2 height-alignment">
+                        <div id="spAttack" class="content-style">
+                            <h4> Ataque esp.</h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-2 height-alignment">
+                        <div id="spDefence" class="content-style">
+                            <h4> Defensa esp. </h4>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="content-style dc-chart">
+                    <div id="statsHisto">
+                        <h4> Estadistica General</h4>
+                        <hr>
+                    </div>
+                    <p> Este gráfico combina todas las estadísticas conocidas de Pokemon. </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row height-alignment">
+                    <div class="col-xs-12 col-sm-6 height-alignment">
+                        <div class="content-style dc-chart">
+                            <div id="pokemon-height">
+                                <h4>Informacion altura del pokemon</h4>
+                                <hr>
+                            </div>
+                            <p> Como un dato curioso: Más de la mitad de los Pokémon miden entre 1.5 y 1.6 metros.</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 height-alignment">
+                        <div class="content-style dc-chart">
+                            <div id="pokemon-weight">
+                                <h4>Informacion Peso del pokemon.</h4>
+                                <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="content-style dc-chart">
+                    <div id="pokemon-type">
+                        <h4>Que tipo de Pokemon es? </h4>
+                        <hr>
+            </div>
+        </div>
+
+       
+        
+    </section>
+    <footer class="navbar navbar-default"> 
+        <div class="container-fluid">
+            <div class="row">
+              
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>
